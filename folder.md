@@ -1,9 +1,23 @@
 1. /bin
 2. /sbin
 3. /etc
-    系統環境變數/profile 或 /enviroment
-   - 更新指令
-   source /etc/profile
+     /profile 或 /enviroment =>系統環境變數 
+       - 更新指令
+           source /etc/profile
+    /network/interfaces => 網路設定配置
+       ```
+           auto eth0
+           iface eth0 inet dhcp
+       ```
+    /etc/resolv.conf
+       -修改 sudo vim /etc/resolvconf/resolv.conf.d/base
+       ```
+           domain twnic.com.tw
+           nameserver 168.95.1.1    //dns server1
+            nameserver 168.95.192.1    //dns server2
+       ```
+       -更新 sudo resolvconf -u
+   
 5. /home/xxx => 個別用戶的檔案及數據  
  設定使用者環境變數
  - 輸入指令
