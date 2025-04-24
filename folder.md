@@ -126,6 +126,17 @@
      /hosts => LAN　ip預名
      /motd => 登入歡迎訊息
      /sudoers =>sudo 配置檔
+        ```
+             %group_name  ALL=(ALL) ALL  //群組設定
+             user_name  ALL=(ALL) ALL  //用戶設定
+             user_name  ALL=(ALL) NOPASSWD:ALL //不須密碼
+
+             // 自訂規則
+             User_Alias MYACC = user_a, user_b, user_c
+             MYACC  ALL=(root) !/usr/bin/passwd,
+             /usr/bin/passwd [A-Za-z]*, !/usr/bin/passwd  root 
+             
+        ```
         
      /profile
      /bashrc
