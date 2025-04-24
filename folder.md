@@ -106,7 +106,7 @@
                sudo systemctl enable xxx_service
              - 取消開機自動啟動服務
                sudo systemctl disable xxx_service
-        /ssh/sshd_config/ => ssh 配置檔
+        /ssh/sshd_config/ => ssh 配置檔 (需安裝ssh)
              ‵‵`
                #連接portt
                Port 22
