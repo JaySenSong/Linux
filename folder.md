@@ -118,9 +118,9 @@
                sudo systemctl restart ssh
       /init.d => 控制服務腳本(已被systemd取代)
       /pam.d => PAM身分驗證模組
-     /passwd
-     /shadow
-     /group
+     /passwd => 帳號權限
+     /shadow => 帳號加密密碼及有效時間
+     /group => 群組
      /fstab =>設備掛載資訊
      /hostname => 主機名稱
      /hosts => LAN　ip預名
@@ -139,11 +139,12 @@
              
         ```
         
-     /profile
-     /bashrc
-     /sysctl.conf
-     /services
-     /default
+     /profile => 同bashrc(只在登入時執行)
+     /bashrc => bash shell (設定環境變數)
+     /sysctl.conf => 網路行為配置
+        -sysctl -p 命令生效
+        
+     /services => 運行中網路服務端口及協定
              
 5. /home/xxx => 個別用戶的檔案及數據  
  設定使用者環境變數
