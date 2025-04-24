@@ -34,6 +34,7 @@
 8. /usr
      /bin => 基本命令(ls,cat)、預設軟體(vim,python) 
      /sbin => 管理系統命令(systemctl,ifconfig、守護進程服務(nginx,apache)
+     /local => 第三方軟體(jdk,mvn,npm)
 9. /var
 10. /tmp
 11. /tmp
