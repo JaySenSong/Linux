@@ -9,7 +9,7 @@
            auto eth0
            iface eth0 inet dhcp
        ```
-    /etc/resolv.conf
+    /resolv.conf
        -修改 sudo vim /etc/resolvconf/resolv.conf.d/base
        ```
            domain twnic.com.tw
@@ -17,7 +17,7 @@
             nameserver 168.95.192.1    //dns server2
        ```
        -更新 sudo resolvconf -u
-   /etc/systemd/system/xxx_service.service
+   /systemd/system/xxx_service.service  => 自訂服務
         --範本
              ```
                [Unit]
@@ -106,6 +106,16 @@
                sudo systemctl enable xxx_service
              - 取消開機自動啟動服務
                sudo systemctl disable xxx_service
+        /ssh/sshd_config/ => ssh 配置檔
+             ‵‵`
+               #連接portt
+               Port 22
+               #root登入
+               PermitRotLogin yes
+               #限定登入者
+               AllowUsers <username>
+             ```
+               sudo systemctl restart ssh
              
 5. /home/xxx => 個別用戶的檔案及數據  
  設定使用者環境變數
@@ -130,7 +140,7 @@
 12. /dev
 13. /proc
 14. /sys
-15. /opt
+15. /opt => 系統服務腳本
 16. /mnt
 17. /media
 18. /boot
