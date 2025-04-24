@@ -126,6 +126,7 @@
      /hosts => LAN　ip預名
      /motd => 登入歡迎訊息
      /sudoers =>sudo 配置檔
+        - 使用 visudo /etc/sudoers 
         ```
              %group_name  ALL=(ALL) ALL  //群組設定
              user_name  ALL=(ALL) ALL  //用戶設定
