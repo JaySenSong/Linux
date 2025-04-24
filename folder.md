@@ -32,8 +32,8 @@
 6. /root
 7. /lib
 8. /usr
-     /local => 開發工具軟體
-       /bin => 自訂腳本
+     /bin => 基本命令(ls,cat)、預設軟體(vim,python) 
+     /sbin => 管理系統命令(systemctl,ifconfig、守護進程服務(nginx,apache)
 9. /var
 10. /tmp
 11. /tmp
