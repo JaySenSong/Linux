@@ -9,7 +9,7 @@
            auto eth0
            iface eth0 inet dhcp
        ```
-    /resolv.conf
+    /resolv.conf => 指定 dnc server
        -修改 sudo vim /etc/resolvconf/resolv.conf.d/base
        ```
            domain twnic.com.tw
@@ -117,6 +117,21 @@
              ```
                sudo systemctl restart ssh
       /init.d => 控制服務腳本(已被systemd取代)
+      /pam.d => PAM身分驗證模組
+     /passwd
+     /shadow
+     /group
+     /fstab =>設備掛載資訊
+     /hostname => 主機名稱
+     /hosts => LAN　ip預名
+     /motd => 登入歡迎訊息
+     /sudoers =>sudo 配置檔
+        
+     /profile
+     /bashrc
+     /sysctl.conf
+     /services
+     /default
              
 5. /home/xxx => 個別用戶的檔案及數據  
  設定使用者環境變數
