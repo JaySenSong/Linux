@@ -116,6 +116,7 @@
                AllowUsers <username>
              ```
                sudo systemctl restart ssh
+      /init.d => 控制服務腳本(已被systemd取代)
              
 5. /home/xxx => 個別用戶的檔案及數據  
  設定使用者環境變數
