@@ -1,6 +1,7 @@
+
 1. /bin
 2. /sbin
-3. /etc
+3. /etc (不可共享目錄)
      /profile 或 /enviroment =>系統環境變數 
        - 更新指令
            source /etc/profile
@@ -145,6 +146,7 @@
         -sysctl -p 命令生效
         
      /services => 運行中網路服務端口及協定
+     /opt 存放不可共享的第三方軟體
              
 5. /home/xxx => 個別用戶的檔案及數據  
  設定使用者環境變數
@@ -158,19 +160,20 @@
  - 更新指令
    source ~/.bashrc
 6. /root
-7. /lib
-8. /usr
+7. /lib => 開機使用到模組
+8. /usr (可分享與不可變動)
      /bin => 基本命令(ls,cat)、預設軟體(vim,python) 
-     /sbin => 管理系統命令(systemctl,ifconfig、守護進程服務(nginx,apache)
+     /sbin => 非系統正常運作所需命令(systemctl,ifconfig、守護進程服務(nginx,apache)
      /local => 第三方軟體(jdk,mvn,npm)
-9. /var
-10. /tmp
-11. /tmp
-12. /dev
-13. /proc
+     /share => 線上說明文件
+9. /var =>常態變動檔案 (log,mail,db_data)
+10. /tmp => 暫存檔案(需手動或用腳本刪除)
+12. /dev => 裝置目錄
+13. /proc => process
 14. /sys
 15. /opt => 系統服務腳本
 16. /mnt
 17. /media
 18. /boot
 19. /swap
+
