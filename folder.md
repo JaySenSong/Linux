@@ -17,7 +17,96 @@
             nameserver 168.95.192.1    //dns server2
        ```
        -更新 sudo resolvconf -u
-   
+   /etc/systemd/system/xxx_service.service
+        --範本
+             ```
+               [Unit]
+               # 服務名稱
+               Description=Your Server
+               
+               # 服務相關文件
+               # Documentation=https://example.com
+               # Documentation=man:nginx(8)
+               
+               # 設定服務啟動的先後相依姓，例如在網路啟動之後：
+               # After=network.target
+               
+               [Service]
+               # 行程類型
+               Type=simple
+               
+               # 啟動服務指令
+               ExecStart=/opt/xxx.py
+               
+               # 服務行程 PID（通常配合 forking 的服務使用）
+               # PIDFile=/run/your_server.pid
+               
+               # 啟動服務前，執行的指令
+               # ExecStartPre=/opt/your_command
+               
+               # 啟動服務後，執行的指令
+               # ExecStartPost=/opt/your_command
+               
+               # 停止服務指令
+               # ExecStop=/opt/your_command
+               
+               # 停止服務後，執行的指令
+               # ExecStopPost=/opt/your_command
+               
+               # 重新載入服務指令
+               # ExecReload=/opt/your_command
+               
+               # 服務終止時自動重新啟動
+               Restart=always
+               
+               # 重新啟動時間格時間（預設為 100ms）
+               # RestartSec=3s
+               
+               # 啟動服務逾時秒數
+               # TimeoutStartSec=3s
+               
+               # 停止服務逾時秒數
+               # TimeoutStopSec=3s
+               
+               # 執行時的工作目錄
+               # WorkingDirectory=/opt/your_folder
+               
+               # 執行服務的使用者（名稱或 ID 皆可）
+               # User=myuser
+               
+               # 執行服務的群組（名稱或 ID 皆可）
+               # User=mygroup
+               
+               # 環境變數設定
+               # Environment="VAR1=word1 word2" VAR2=word3 "VAR3=$word 5 6"
+               
+               # 服務輸出訊息導向設定
+               # StandardOutput=syslog
+               
+               # 服務錯誤訊息導向設定
+               # StandardError=syslog
+               
+               # 設定服務在 Syslog 中的名稱
+               # SyslogIdentifier=your-server
+               
+               [Install]
+               WantedBy=multi-user.target
+             ```
+             -權限設定
+               sudo chmod 644 /etc/systemd/system/xxx_service.service
+             -重新載入 Systemd 設定檔
+               sudo systemctl daemon-reload
+             -啟動自訂的服務
+               sudo systemctl start xxx_service
+             -查看服務狀態
+               systemctl status xxx_service
+             - 停止服務
+               sudo systemctl stop xxx_service
+             - 設定開機自動啟動服務
+               sudo systemctl enable xxx_service
+             - 取消開機自動啟動服務
+               sudo systemctl disable xxx_service
+             
 5. /home/xxx => 個別用戶的檔案及數據  
  設定使用者環境變數
  - 輸入指令
