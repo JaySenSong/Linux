@@ -167,7 +167,8 @@
      /local => 第三方軟體(jdk,mvn,npm)
      /share => 線上說明文件
 9. /var =>常態變動檔案 (log,mail,db_data)
-10. /tmp => 暫存檔案(需手動或用腳本刪除)
+        /lib => 程式運行時需要用到的檔案(.sql, .rpm)
+10. /tmp => 暫存檔案(需手動或用腳本刪除)    
 12. /dev => 裝置目錄
 13. /proc => process
 14. /sys
